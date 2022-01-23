@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_LINK_MINK_PATH/package/link_mink_core/Config.in"

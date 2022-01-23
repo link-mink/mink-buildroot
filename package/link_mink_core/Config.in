@@ -1,0 +1,95 @@
+menuconfig BR2_PACKAGE_LINK_MINK_CORE
+	bool "link_mink_core"
+	depends on BR2_INSTALL_LIBSTDCPP
+        select BR2_PACKAGE_NCURSES
+        select BR2_PACKAGE_LKSCTP_TOOLS
+        select BR2_PACKAGE_LIBCAP
+        select BR2_PACKAGE_PROCPS_NG 
+        select BR2_PACKAGE_BOOST
+        select BR2_PACKAGE_OPENSSL 
+        select BR2_PACKAGE_LIBOPENSSL
+        select BR2_PACKAGE_ZLIB
+        select BR2_PACKAGE_SQLITE
+
+	help
+	  mINK Framework
+
+	  https://github.com/link-mink/mink-core
+
+
+if BR2_PACKAGE_LINK_MINK_CORE
+
+    menu "mink core"
+
+        config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT
+                bool "mink_sysagentd"
+                help
+                  mINK System Agent Daemon
+
+        config BR2_PACKAGE_LINK_MINK_CORE_JRPCD
+                bool "mink_jrpcd"
+                help
+                  mINK JSON RPC 2.0 Daemon
+
+        config BR2_PACKAGE_LINK_MINK_CORE_GRPCD
+                bool "mink_grpcd"
+                select BR2_PACKAGE_GRPC
+                help
+                  mINK GRPC Daemon
+
+        config BR2_PACKAGE_LINK_MINK_CORE_GDTTRAPC
+                bool "mink_gdttrapc"
+                help
+                  mINK GDT Trap Client
+
+        config BR2_PACKAGE_LINK_MINK_CORE_CODEGEN
+                bool "mink_codegen"
+                help
+                  mINK Code Generator (sysagent plugins)
+
+    endmenu
+
+    if BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT
+
+        menu "mink sysagent plugins"
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSLOG
+                    bool "mink_sysagent_plg_syslog"
+                    help
+                      enable syslog plugin
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_OPENWRT
+                    bool "mink_sysagent_plg_owrt"
+                    help
+                      enable OpenWrt support
+
+        endmenu
+
+    endif
+
+
+    if BR2_PACKAGE_LINK_MINK_CORE_JRPCD
+
+        menu "mink jrpcd options"
+
+            config BR2_PACKAGE_LINK_MINK_CORE_JRPCD_WS
+                bool "mink_jrpcd_ws"
+                help
+                  mINK JRPCD Plain WebSocket support (ws://)
+
+            config BR2_PACKAGE_LINK_MINK_CORE_JRPCD_TLS12
+                bool "mink_jrpcd_tls12"
+                help
+                  mINK JRPCD TLSv1.2 suppport
+
+            config BR2_PACKAGE_LINK_MINK_CORE_JRPCD_SS
+                bool "mink_jrpcd_ss"
+                help
+                  mINK JRPCD Single user session
+                
+        endmenu
+
+    endif
+
+endif
+
