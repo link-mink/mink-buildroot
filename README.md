@@ -1,6 +1,16 @@
 [<div align="center"><img src="http://139.162.200.34/mink.png"></div>](https://github.com/dfranusic/mink)
 
 ##### *mINK Package for Buildroot*
+
+##### Raspberry Pi2 How-To
+```shell
+$ make raspberrypi2_defconfig
+$ make menuconfig BR2_EXTERNAL=../
+(select mINK package(s) and options)
+$ make
+$ dd if=output/images/sdcard.img of=/dev/sdX bs=4M conv=fsync
+```
+
 ----
 ## mINK Core
 `BR2_PACKAGE_LINK_MINK_CORE` - core components ( **routingd** and **libgdt** )

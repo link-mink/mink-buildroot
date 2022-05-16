@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-LINK_MINK_CORE_VERSION = v1.1.5
+LINK_MINK_CORE_VERSION = dev
 LINK_MINK_CORE_SITE = git@github.com:link-mink/mink-core.git
 LINK_MINK_CORE_SITE_METHOD = git
 LINK_MINK_CORE_LICENSE = MIT
@@ -14,6 +14,7 @@ LINK_MINK_CORE_INSTALL_TARGET = YES
 LINK_MINK_CORE_AUTORECONF = YES
 LINK_MINK_CORE_CONF_OPTS = \
 	--with-gdt-csize=8192 \
+        --with-boost-libdir=$(STAGING_DIR)/usr/lib \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT),--enable-sysagent) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSLOG),--enable-syslog) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_OPENWRT),--enable-openwrt) \
@@ -46,6 +47,6 @@ define GDT_PROTO_COMPILE
 		-I$(LINK_MINK_CORE_BUILDDIR)/src/proto \
 		$(LINK_MINK_CORE_BUILDDIR)/src/proto/gdt.proto
 endef
-	
+
 
 $(eval $(autotools-package))
