@@ -1,0 +1,10 @@
+menuconfig BR2_PACKAGE_NDPI
+	bool "ndpi"
+        select BR2_PACKAGE_LIBPCAP
+
+	help
+	  nDPI
+
+	  https://github.com/ntop/nDPI
+
+
