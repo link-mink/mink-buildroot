@@ -65,6 +65,18 @@ if BR2_PACKAGE_LINK_MINK_CORE
                     help
                       enable OpenWrt support
 
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_LUA
+                    bool "mink_sysagent_plg_lua"
+                    select BR2_PACKAGE_LUAJIT
+                    help
+                      enable Lua support
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MQTT
+                    bool "mink_sysagent_plg_mqtt"
+                    select BR2_PACKAGE_PAHO_MQTT_C
+                    help
+                      enable MQTT support
+
         endmenu
 
     endif

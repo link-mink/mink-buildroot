@@ -18,6 +18,8 @@ LINK_MINK_CORE_CONF_OPTS = \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT),--enable-sysagent) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSLOG),--enable-syslog) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_OPENWRT),--enable-openwrt) \
+	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_LUA),--enable-lua) \
+	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MQTT),--enable-mqtt) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_GDTTRAPC),--enable-gdttrapc) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_CODEGEN),--enable-codegen) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_JRPCD),--enable-jrpc --enable-openssl) \
