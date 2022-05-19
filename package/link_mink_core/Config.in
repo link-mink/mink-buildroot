@@ -21,7 +21,7 @@ menuconfig BR2_PACKAGE_LINK_MINK_CORE
 
 if BR2_PACKAGE_LINK_MINK_CORE
 
-    menu "mink core"
+    menu "mINK Core Daemons"
 
         config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT
                 bool "mink_sysagentd"
@@ -37,7 +37,7 @@ if BR2_PACKAGE_LINK_MINK_CORE
                 bool "mink_grpcd"
                 select BR2_PACKAGE_GRPC
                 help
-                  mINK GRPC Daemon
+                  mINK gRPC Daemon
 
         config BR2_PACKAGE_LINK_MINK_CORE_GDTTRAPC
                 bool "mink_gdttrapc"
@@ -47,41 +47,67 @@ if BR2_PACKAGE_LINK_MINK_CORE
         config BR2_PACKAGE_LINK_MINK_CORE_CODEGEN
                 bool "mink_codegen"
                 help
-                  mINK Code Generator (sysagent plugins)
+                  mINK Code Generator
+
+        config BR2_PACKAGE_LINK_MINK_CORE_CFGD
+                bool "mink_cfgd"
+                help
+                  mINK Config Daemon
+
 
     endmenu
 
     if BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT
 
-        menu "mink sysagent plugins"
+        menu "mINK System Agent Plugins"
 
             config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSLOG
                     bool "mink_sysagent_plg_syslog"
                     help
-                      enable syslog plugin
-
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_OPENWRT
-                    bool "mink_sysagent_plg_owrt"
-                    help
-                      enable OpenWrt support
+                      syslog plugin
 
             config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_LUA
                     bool "mink_sysagent_plg_lua"
                     select BR2_PACKAGE_LUAJIT
                     help
-                      enable Lua support
+                      LuaJIT plugin (Lua support)
 
             config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MQTT
                     bool "mink_sysagent_plg_mqtt"
                     select BR2_PACKAGE_PAHO_MQTT_C
                     help
-                      enable MQTT support
+                      MQTT plugin
 
             config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_NDPI
                     bool "mink_sysagent_plg_ndpi"
                     select BR2_PACKAGE_NDPI
                     help
-                      enable nDPI support
+                      nDPI plugin
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CGROUP2
+                    bool "mink_sysagent_plg_cgroup2"
+                    help
+                      cgroup2 plugin
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_UNIX
+                    bool "mink_sysagent_plg_unix"
+                    help
+                      UNIX socket RPC plugin
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSTEMD
+                    bool "mink_sysagent_plg_systemd"
+                    help
+                      systemd plugin (sdbus)
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CFG_HNDLR
+                    bool "mink_sysagent_plg_cfg_hndlr"
+                    help
+                      mINK configd plugin
+
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MODBUS
+                    bool "mink_sysagent_plg_modbus"
+                    help
+                      modbus plugin
 
         endmenu
 
