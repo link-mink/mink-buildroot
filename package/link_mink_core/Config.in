@@ -109,6 +109,11 @@ if BR2_PACKAGE_LINK_MINK_CORE
                     help
                       modbus plugin
 
+            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CLIPS
+                    bool "mink_sysagent_plg_clips"
+                    help
+                      CLIPS plugin
+
         endmenu
 
     endif

@@ -25,6 +25,7 @@ LINK_MINK_CORE_CONF_OPTS = \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSTEMD),--enable-systemd) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CFG_HNDLR),--enable-config-handler) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MODBUS),--enable-modbus) \
+	$(if $(BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CLIPS),--enable-clips) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_GDTTRAPC),--enable-gdttrapc) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_CODEGEN),--enable-codegen) \
 	$(if $(BR2_PACKAGE_LINK_MINK_CORE_JRPCD),--enable-jrpc --enable-openssl) \
