@@ -1,0 +1,9 @@
+[Unit]
+Description=mINK routingd
+
+[Service]
+ExecStart=/usr/bin/routingd -i rt1 -p 15000 -h 127.0.0.1
+WorkingDirectory=/root/
+
+[Install]
+WantedBy=multi-user.target

@@ -1,4 +1,4 @@
-menuconfig BR2_PACKAGE_LINK_MINK_CORE
+menuconfig BR2_PACKAGE_MINK_CORE
 	bool "link_mink_core"
 	depends on BR2_INSTALL_LIBSTDCPP
 	depends on BR2_USE_WCHAR
@@ -19,37 +19,37 @@ menuconfig BR2_PACKAGE_LINK_MINK_CORE
 	  https://github.com/link-mink/mink-core
 
 
-if BR2_PACKAGE_LINK_MINK_CORE
+if BR2_PACKAGE_MINK_CORE
 
     menu "mINK Core Daemons"
 
-        config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT
+        config BR2_PACKAGE_MINK_CORE_SYSAGENT
                 bool "mink_sysagentd"
                 help
                   mINK System Agent Daemon
 
-        config BR2_PACKAGE_LINK_MINK_CORE_JRPCD
+        config BR2_PACKAGE_MINK_CORE_JRPCD
                 bool "mink_jrpcd"
                 help
                   mINK JSON RPC 2.0 Daemon
 
-        config BR2_PACKAGE_LINK_MINK_CORE_GRPCD
+        config BR2_PACKAGE_MINK_CORE_GRPCD
                 bool "mink_grpcd"
                 select BR2_PACKAGE_GRPC
                 help
                   mINK gRPC Daemon
 
-        config BR2_PACKAGE_LINK_MINK_CORE_GDTTRAPC
+        config BR2_PACKAGE_MINK_CORE_GDTTRAPC
                 bool "mink_gdttrapc"
                 help
                   mINK GDT Trap Client
 
-        config BR2_PACKAGE_LINK_MINK_CORE_CODEGEN
+        config BR2_PACKAGE_MINK_CORE_CODEGEN
                 bool "mink_codegen"
                 help
                   mINK Code Generator
 
-        config BR2_PACKAGE_LINK_MINK_CORE_CFGD
+        config BR2_PACKAGE_MINK_CORE_CFGD
                 bool "mink_cfgd"
                 help
                   mINK Config Daemon
@@ -57,59 +57,59 @@ if BR2_PACKAGE_LINK_MINK_CORE
 
     endmenu
 
-    if BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT
+    if BR2_PACKAGE_MINK_CORE_SYSAGENT
 
         menu "mINK System Agent Plugins"
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSLOG
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_SYSLOG
                     bool "mink_sysagent_plg_syslog"
                     help
                       syslog plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_LUA
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_LUA
                     bool "mink_sysagent_plg_lua"
                     select BR2_PACKAGE_LUAJIT
                     help
                       LuaJIT plugin (Lua support)
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MQTT
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_MQTT
                     bool "mink_sysagent_plg_mqtt"
                     select BR2_PACKAGE_PAHO_MQTT_C
                     help
                       MQTT plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_NDPI
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_NDPI
                     bool "mink_sysagent_plg_ndpi"
                     select BR2_PACKAGE_NDPI
                     help
                       nDPI plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CGROUP2
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_CGROUP2
                     bool "mink_sysagent_plg_cgroup2"
                     help
                       cgroup2 plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_UNIX
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_UNIX
                     bool "mink_sysagent_plg_unix"
                     help
                       UNIX socket RPC plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_SYSTEMD
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_SYSTEMD
                     bool "mink_sysagent_plg_systemd"
                     help
                       systemd plugin (sdbus)
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CFG_HNDLR
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_CFG_HNDLR
                     bool "mink_sysagent_plg_cfg_hndlr"
                     help
                       mINK configd plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_MODBUS
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_MODBUS
                     bool "mink_sysagent_plg_modbus"
                     help
                       modbus plugin
 
-            config BR2_PACKAGE_LINK_MINK_CORE_SYSAGENT_CLIPS
+            config BR2_PACKAGE_MINK_CORE_SYSAGENT_CLIPS
                     bool "mink_sysagent_plg_clips"
                     help
                       CLIPS plugin
@@ -119,21 +119,21 @@ if BR2_PACKAGE_LINK_MINK_CORE
     endif
 
 
-    if BR2_PACKAGE_LINK_MINK_CORE_JRPCD
+    if BR2_PACKAGE_MINK_CORE_JRPCD
 
         menu "mink jrpcd options"
 
-            config BR2_PACKAGE_LINK_MINK_CORE_JRPCD_WS
+            config BR2_PACKAGE_MINK_CORE_JRPCD_WS
                 bool "mink_jrpcd_ws"
                 help
                   mINK JRPCD Plain WebSocket support (ws://)
 
-            config BR2_PACKAGE_LINK_MINK_CORE_JRPCD_TLS12
+            config BR2_PACKAGE_MINK_CORE_JRPCD_TLS12
                 bool "mink_jrpcd_tls12"
                 help
                   mINK JRPCD TLSv1.2 suppport
 
-            config BR2_PACKAGE_LINK_MINK_CORE_JRPCD_SS
+            config BR2_PACKAGE_MINK_CORE_JRPCD_SS
                 bool "mink_jrpcd_ss"
                 help
                   mINK JRPCD Single user session

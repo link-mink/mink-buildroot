@@ -1,0 +1,39 @@
+{
+    "plg_sysagent_lua.so": {
+        "cmd_call": "/usr/share/lua/5.1/mink_rpc.lua",
+        "envs": [
+            {
+                "name": "mqtt_rx",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_mqtt_rx.lua",
+                "events": [
+                    "mqtt:RX"
+                ]
+            },
+            {
+                "name": "network_lan",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_net_lan.lua",
+                "events": [
+                    "network_lan"
+                ]
+            }
+        ]
+    },
+    "plg_sysagent_mqtt.so": {
+        "connections": [
+            {
+                "name": "mqtt_local",
+                "address": "tcp://127.0.0.1:1883",
+                "client_id": "mink_@ID@",
+                "username": "",
+                "password": "",
+                "subscriptions": [
+                    "mink/@ID@/cmd"
+                ]
+            }
+        ]
+    }
+}

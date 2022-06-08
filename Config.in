@@ -1,2 +1,2 @@
-source "$BR2_EXTERNAL_LINK_MINK_PATH/package/link_mink_core/Config.in"
-source "$BR2_EXTERNAL_LINK_MINK_PATH/package/ndpi/Config.in"
+source "$BR2_EXTERNAL_MINKOS_PATH/package/mink_core/Config.in"
+source "$BR2_EXTERNAL_MINKOS_PATH/package/ndpi/Config.in"

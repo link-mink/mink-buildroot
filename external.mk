@@ -1,1 +1,1 @@
-include $(sort $(wildcard $(BR2_EXTERNAL_LINK_MINK_PATH)/package/*/*.mk))
+include $(sort $(wildcard $(BR2_EXTERNAL_MINKOS_PATH)/package/*/*.mk))
