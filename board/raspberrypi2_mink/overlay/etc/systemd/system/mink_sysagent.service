@@ -2,7 +2,6 @@
 Description=mINK sysagentd
 
 [Service]
-Environment="LUA_PATH=/root/?.lua"
 ExecStart=/usr/bin/sysagentd -i ag1 -h 127.0.0.1 -c 127.0.0.1:15000 -p /usr/lib/mink --plugins-cfg /etc/mink/plg_cfg.json
 WorkingDirectory=/root/
 

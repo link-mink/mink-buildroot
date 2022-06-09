@@ -1,7 +1,5 @@
--- modules
 local M = require("mink")(...)
 local device = require("device")
-local inspect = require("inspect")
 local lunajson = require("lunajson")
 
 -- device id
@@ -13,28 +11,48 @@ local T = data[1].mqtt_topic
 -- payload
 local P = data[1].mqtt_payload
 
--- debug
-print("mqtt:RX: ", inspect(data))
+-- json decode error handler
+local function json_decode(d)
+    local s, j = pcall(lunajson.decode, d)
+    if not s then
+        return false, {
+            code = -1,
+            message = "malformed data"
+        }
+    else
+        return true, j
+    end
+end
 
 -- verify topic
 if T == "mink/" .. ID .. "/cmd" then
-    -- decode json rpc
-    local j = lunajson.decode(P)
-    -- process method
-    local s_res = M.signal(j.method, P)
     -- setup mqtt result header
     local res = {
-        jsonrpc = "2.0",
-        id = j.id
+        jsonrpc = "2.0"
     }
-    -- err check
-    if s_res ~= nil and s_res ~= "" then
-        res.result = lunajson.decode(s_res)
+    -- decode json rpc
+    local s, j = json_decode(P)
+    if not s then
+        res.error = j
+        res.id = -1
     else
-        res.error = {
-            code = -1,
-            message = "unknown error"
-        }
+        res.id = j.id
+         -- process method
+        local s_res = M.signal(j.method, P)
+        -- err check
+        if s_res ~= nil and s_res ~= "" then
+            s, j = json_decode(s_res)
+            if not s then
+                res.error = j
+            else
+                res.result = j
+            end
+        else
+            res.error = {
+                code = -1,
+                message = "unknown error"
+            }
+        end
     end
     -- MQTT PUBLISH result/error
     cmd = {
@@ -45,4 +63,3 @@ if T == "mink/" .. ID .. "/cmd" then
     }
     M.cmd_call(cmd)
 end
-
