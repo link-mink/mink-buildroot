@@ -4,7 +4,7 @@
 
 ##### Raspberry Pi2 How-To
 ```shell
-$ make raspberrypi2_defconfig
+$ make raspberrypi2_mink_defconfig
 $ make menuconfig BR2_EXTERNAL=../
 (select mINK package(s) and options)
 $ make
