@@ -57,5 +57,17 @@ define GDT_PROTO_COMPILE
 		$(MINK_CORE_BUILDDIR)/src/proto/gdt.proto
 endef
 
+################################################################################
+#
+# systemd
+#
+################################################################################
+define MINK_CORE_INSTALL_INIT_SYSTEMD
+	$(INSTALL) -D -m 0644 $(MINK_CORE_PKGDIR)/systemd/mink_rt.service \
+		$(TARGET_DIR)/usr/lib/systemd/system/mink_rt.service
+
+	$(INSTALL) -D -m 0644 $(MINK_CORE_PKGDIR)/systemd/mink_sysagent.service \
+		$(TARGET_DIR)/usr/lib/systemd/system/mink_sysagent.service
+endef
 
 $(eval $(autotools-package))
