@@ -1,5 +1,7 @@
 [Unit]
 Description=mINK MQTT log
+Wants=mosquitto.service
+After=mosquitto.service
 
 [Service]
 ExecStart=/bin/sh -c 'journalctl -f | mosquitto_pub -h 127.0.0.1 -t mink/@ID@/log -l'
