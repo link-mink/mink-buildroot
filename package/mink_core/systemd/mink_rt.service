@@ -1,5 +1,6 @@
 [Unit]
 Description=mINK routingd
+Requires=network.target
 
 [Service]
 ExecStart=/usr/bin/routingd -i rt1 -p 15000 -h 127.0.0.1
