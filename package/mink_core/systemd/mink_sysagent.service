@@ -4,7 +4,14 @@ Requires=mink_rt.service
 After=mink_rt.service
 
 [Service]
-ExecStart=/usr/bin/sysagentd -i ag1 -h 127.0.0.1 -c 127.0.0.1:15000 -p /usr/lib/mink --plugins-cfg /etc/mink/plg_cfg.json
+ExecStart=/usr/bin/sysagentd \
+    -i ag1 -h 127.0.0.1 \
+    -c 127.0.0.1:15000 \
+    -p /usr/lib/mink \
+    --plugins-cfg /etc/mink/plg_cfg.json \
+    --gdt-smsg-pool=100 \
+    --gdt-sparam-pool=1000
+
 WorkingDirectory=/root/
 
 [Install]
