@@ -1,4 +1,14 @@
--- mink module
+--            _       _
+--  _ __ ___ (_)_ __ | | __
+-- | '_ ` _ \| | '_ \| |/ /
+-- | | | | | | | | | |   <
+-- |_| |_| |_|_|_| |_|_|\_\
+--
+-- SPDX-License-Identifier: MIT
+--
+--
+
+-- imports
 local M = require("mink")(...)
 local lunajson = require("lunajson")
 

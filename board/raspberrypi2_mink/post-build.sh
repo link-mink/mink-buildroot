@@ -17,5 +17,14 @@ find ${TARGET_DIR}/usr/lib/mink -type l -exec rm {} \;
 # system plugin should be first
 test -f ${TARGET_DIR}/usr/lib/mink/plg_sysagent_system.so.1.0.0 && \
     { mv ${TARGET_DIR}/usr/lib/mink/plg_sysagent_system.so.1.0.0 \
-         ${TARGET_DIR}/usr/lib/mink/00-plg_sysagent_system.so.1.0.0; } || \
-    { exit 0; }
+         ${TARGET_DIR}/usr/lib/mink/00-plg_sysagent_system.so.1.0.0; }
+
+echo "==============================================="
+echo "           ___ _   _ _  __   ___  ____"
+echo " _ __ ___ |_ _| \ | | |/ /  / _ \/ ___|"
+echo "| '_ \` _ \ | ||  \| | ' /  | | | \\___ \\"
+echo "| | | | | || || |\  | . \  | |_| |___) |"
+echo "|_| |_| |_|___|_| \_|_|\_\  \___/|____/"
+echo "==============================================="
+echo "device id: $UUID"
+echo "==============================================="

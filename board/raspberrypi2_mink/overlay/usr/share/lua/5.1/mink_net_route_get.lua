@@ -8,4 +8,7 @@
 --
 --
 
-return "{}"
+local h = io.popen("ip --json -s route")
+local r = h:read("*a")
+h:close()
+return r

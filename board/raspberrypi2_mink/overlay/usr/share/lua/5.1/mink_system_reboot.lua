@@ -8,4 +8,6 @@
 --
 --
 
-return "{}"
+-- sdbus call
+os.execute("busctl call org.freedesktop.systemd1 /org/freedesktop/systemd1 org.freedesktop.systemd1.Manager Reboot")
+return '{ "message": "rebooting..." }'
