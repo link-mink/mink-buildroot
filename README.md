@@ -4,13 +4,20 @@
 
 ##### Raspberry Pi2 How-To
 ```shell
-$ make raspberrypi2_mink_defconfig
-$ make menuconfig BR2_EXTERNAL=../
+$ make BR2_EXTERNAL=../ raspberrypi2_mink_defconfig
+$ make menuconfig
 (select mINK package(s) and options)
 $ make
 $ dd if=output/images/sdcard.img of=/dev/sdX bs=4M conv=fsync
 ```
-
+##### ESPRESSObin How-To
+```shell
+$ make BR2_EXTERNAL=../ globalscale_espressobin_mink_defconfig
+$ make menuconfig
+(select mINK package(s) and options)
+$ make
+$ dd if=output/images/sdcard.img of=/dev/sdX bs=4M conv=fsync
+```
 ----
 ## mINK Core
 `BR2_PACKAGE_LINK_MINK_CORE` - core components ( **routingd** and **libgdt** )

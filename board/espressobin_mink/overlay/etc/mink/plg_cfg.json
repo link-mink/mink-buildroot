@@ -1,0 +1,84 @@
+{
+    "plg_sysagent_lua.so": {
+        "cmd_call": "/usr/share/lua/5.1/mink_rpc.lua",
+        "envs": [
+            {
+                "name": "mqtt_rx",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_mqtt_rx.lua",
+                "events": [
+                    "mqtt:RX"
+                ]
+            },
+            {
+                "name": "network_lan::get",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_net_lan_get.lua",
+                "events": [
+                    "network_lan::get"
+                ]
+            },
+            {
+                "name": "network_route::get",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_net_route_get.lua",
+                "events": [
+                    "network_route::get"
+                ]
+            },
+            {
+                "name": "sysinfo::get",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_sysinfo_get.lua",
+                "events": [
+                    "sysinfo::get"
+                ]
+            },
+            {
+                "name": "system::reboot",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/mink_system_reboot.lua",
+                "events": [
+                    "system::reboot"
+                ]
+            },
+            {
+                "name": "system::fwupload::init",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/fwupload_init.lua",
+                "events": [
+                    "system::fwupload::init"
+                ]
+            },
+            {
+                "name": "system::fwupload::send",
+                "auto_start": false,
+                "interval": 0,
+                "path": "/usr/share/lua/5.1/fwupload_send.lua",
+                "events": [
+                    "system::fwupload::send"
+                ]
+            }
+        ]
+    },
+    "plg_sysagent_mqtt.so": {
+        "connections": [
+            {
+                "name": "mqtt_local",
+                "address": "tcp://127.0.0.1:1883",
+                "client_id": "mink_@ID@",
+                "username": "",
+                "password": "",
+                "subscriptions": [
+                    "mink/@ID@/cmd"
+                ]
+            }
+        ]
+    }
+}
