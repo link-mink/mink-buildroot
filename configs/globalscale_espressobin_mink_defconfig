@@ -15,6 +15,7 @@ BR2_LINUX_KERNEL_DTS_SUPPORT=y
 BR2_LINUX_KERNEL_INTREE_DTS_NAME="marvell/armada-3720-espressobin marvell/armada-3720-espressobin-emmc marvell/armada-3720-espressobin-v7 marvell/armada-3720-espressobin-v7-emmc marvell/armada-3720-espressobin-ultra"
 BR2_LINUX_KERNEL_INSTALL_TARGET=y
 BR2_LINUX_KERNEL_NEEDS_HOST_OPENSSL=y
+BR2_GLOBAL_PATCH_DIR="$(BR2_EXTERNAL_MINKOS_PATH)/board/espressobin_mink/patches"
 
 # Filesystem
 BR2_TARGET_ROOTFS_EXT2=y

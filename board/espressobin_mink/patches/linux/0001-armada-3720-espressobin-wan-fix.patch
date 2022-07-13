@@ -1,0 +1,21 @@
+diff -ruN a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi
+--- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi	2022-07-13 11:44:09.987066681 +0200
++++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi	2022-07-13 11:46:23.477063495 +0200
+@@ -170,7 +170,7 @@
+ 
+ 			switch0port1: port@1 {
+ 				reg = <1>;
+-				label = "wan";
++				label = "lan1";
+ 				phy-handle = <&switch0phy0>;
+ 			};
+ 
+@@ -182,7 +182,7 @@
+ 
+ 			switch0port3: port@3 {
+ 				reg = <3>;
+-				label = "lan1";
++				label = "wan";
+ 				phy-handle = <&switch0phy2>;
+ 			};
+ 
