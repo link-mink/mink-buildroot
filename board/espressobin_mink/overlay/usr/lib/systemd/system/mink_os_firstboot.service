@@ -1,0 +1,10 @@
+[Unit]
+Description=mINK first boot service
+ConditionFirstBoot=yes
+
+[Service]
+Type=oneshot
+ExecStart=/usr/share/mink/mink_os_firstboot.sh
+
+[Install]
+WantedBy=multi-user.target

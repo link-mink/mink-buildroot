@@ -25,6 +25,8 @@ sed -i -e "s/\(VERSION=\)\(.*\)/\1${MINK_OS_VER}/g" ${TARGET_DIR}/etc/os-release
 sed -i -e "s/\(ID=\)\(.*\)/\1mink_os/g" ${TARGET_DIR}/etc/os-release
 sed -i -e "s/\(VERSION_ID=\)\(.*\)/\1${MINK_OS_VER}/g" ${TARGET_DIR}/etc/os-release
 sed -i -e "s/\(PRETTY_NAME=\)\(.*\)/\1\"mINK OS\"/g" ${TARGET_DIR}/etc/os-release
+# fix systemd firstboot
+rm ${TARGET_DIR}/etc/machine-id
 # info
 echo "==============================================="
 echo "           ___ _   _ _  __   ___  ____"
