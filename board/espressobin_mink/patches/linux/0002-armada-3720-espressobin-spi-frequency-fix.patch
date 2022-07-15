@@ -1,0 +1,11 @@
+--- a/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi	2022-07-15 10:59:39.609814649 +0200
++++ b/arch/arm64/boot/dts/marvell/armada-3720-espressobin.dtsi	2022-07-15 11:01:15.629812974 +0200
+@@ -112,7 +112,7 @@
+ 	flash@0 {
+ 		reg = <0>;
+ 		compatible = "jedec,spi-nor";
+-		spi-max-frequency = <104000000>;
++		spi-max-frequency = <25000000>;
+ 		m25p,fast-read;
+ 	};
+ };
