@@ -71,7 +71,7 @@ if ctl ~= nil and device_uuid ~= nil and session_id ~= nil then
     cmd = {
         "CMD_MQTT_PUBLISH",
         "mqtt_local",
-        "mink/" .. ID .. "/res",
+        "mink/" .. device_uuid .. "/" .. session_id .. "/res",
         lunajson.encode(res)
     }
     M.cmd_call(cmd)
