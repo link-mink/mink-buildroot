@@ -36,7 +36,9 @@ local function json_decode(d)
 end
 
 -- verify topic
-if T == "mink/" .. ID .. "/cmd" then
+local it = T:gmatch("mink/([a-zA-Z0-9_-]*)/([a-zA-Z0-9_-]*)/(cmd)")
+local device_uuid, session_id, ctl = it()
+if ctl ~= nil and device_uuid ~= nil and session_id ~= nil then
     -- setup mqtt result header
     local res = {
         jsonrpc = "2.0"

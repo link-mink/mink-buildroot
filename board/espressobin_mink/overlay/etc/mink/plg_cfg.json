@@ -76,7 +76,7 @@
                 "username": "",
                 "password": "",
                 "subscriptions": [
-                    "mink/@ID@/cmd"
+                    "mink/@ID@/+/cmd"
                 ]
             }
         ]
